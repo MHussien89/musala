@@ -7,12 +7,6 @@
 `--build`
 should be used first time, and whenever there are changes applied.
 
-#### Initial installation and run:
-
-    docker pull mongo
-
-    docker run -it -p 27017:27017 -v ~/mongo/data:/data/db --name mongo -d mongo
-
 #### logs
 
     docker logs mongoDB
