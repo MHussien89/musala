@@ -1,1 +1,0 @@
-{"version":3,"file":"amenity.dto.js","sourceRoot":"","sources":["../../../src/dtos/request/amenity.dto.ts"],"names":[],"mappings":";;;;;;;;;AAAA,OAAO,EACH,QAAQ,EACX,MAAM,iBAAiB,CAAC;AACzB,OAAO,kBAAkB,CAAC;AAE1B;IAAA,MAAa,gBAAgB;KAQ5B;IALG;QADC,QAAQ,EAAE;;kDACS;IAGpB;QADC,QAAQ,EAAE;;mDACU;IAEzB,uBAAC;KAAA;SARY,gBAAgB"}

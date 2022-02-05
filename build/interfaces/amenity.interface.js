@@ -1,1 +1,0 @@
-//# sourceMappingURL=amenity.interface.js.map

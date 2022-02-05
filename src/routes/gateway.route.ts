@@ -43,7 +43,7 @@ class GatewayRoute implements Route {
     );
 
     this.router.put(
-      `${this.path}/:id/device`,
+      `${this.path}/:gatewayId/device/:deviceId`,
       validationMiddleware(UpdateDeviceDto),
       this.gatewayController.updateDevice
     );

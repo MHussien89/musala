@@ -1,1 +1,0 @@
-{"version":3,"file":"cloud-beds.js","sourceRoot":"","sources":["../../src/config/cloud-beds.ts"],"names":[],"mappings":"AAAA,MAAM,SAAS,GAAQ;IACnB,GAAG,EAAE;QACD,oBAAoB,EAAE,uDAAuD;QAC7E,gBAAgB,EAAE,6DAA6D;QAC/E,qBAAqB,EAAE,gDAAgD;QACvE,eAAe,EAAE,oDAAoD;KACxE;IACD,WAAW,EAAE,uCAAuC;IACpD,eAAe,EAAE,kCAAkC;IACnD,YAAY,EAAE,eAAe;CAChC,CAAC;AAEF,OAAO,EAAE,SAAS,EAAE,CAAC"}

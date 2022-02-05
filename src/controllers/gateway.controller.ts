@@ -99,7 +99,7 @@ class GatewayController {
 
   public updateDevice = async (req: Request, res: Response, next: NextFunction) => {
     const updateDeviceDto: UpdateDeviceDto = req.body;
-    const deviceId: string = req.params.id;
+    const deviceId: string = req.params.deviceId;
 
     try {
       logger.debug(

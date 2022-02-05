@@ -1,1 +1,0 @@
-{"version":3,"file":"aws-config.js","sourceRoot":"","sources":["../../src/config/aws-config.ts"],"names":[],"mappings":"AAAA,MAAM,SAAS,GAKX;IACF,WAAW,EAAE,OAAO,CAAC,GAAG,CAAC,aAAa;IACtC,eAAe,EAAE,OAAO,CAAC,GAAG,CAAC,iBAAiB;IAC9C,OAAO,EAAE,OAAO,CAAC,GAAG,CAAC,OAAO;IAC5B,YAAY,EAAE,OAAO,CAAC,GAAG,CAAC,YAAY;CACvC,CAAC;AACF,OAAO,EAAE,SAAS,EAAE,CAAC"}

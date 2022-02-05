@@ -282,7 +282,7 @@ class GatewayService {
         devices: gatewaySaved.devices
       });
 
-    await this.device.findByIdAndUpdate(
+    await this.device.findOneAndUpdate(
       { id: deviceId }, { isDeleted: true });
 
     logger.debug(`succesfully delete device with id: ${deviceId} ==> GatewayService deleteDevice`);
