@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+// tslint:disable
+require('child_process').exec("git branch | grep '*'", function (err, stdout) {
+  if (err) {
+    process.abort();
+  } else {
+    var name = stdout.replace('* ', '').replace('\n', '');
+
+    if (name === 'master' || name === 'develop') {
+      console.log('\x1b[31m', "Please don't push to master or develop directly", '\x1b[0m');
+      process.exit(-1);
+    }
+  }
+});
+console.log('\x1b[36m%s\x1b[0m', 'TSlint to run... be aware!!', '\x1b[0m');
+require('child_process').exec('npm run lint', function (err, stdout) {
+  console.log('Tslint: ' + stdout);
+  if (err) {
+    console.log('Failed with Error in TSLint');
+    process.exit(-1);
+  } else {
+    console.log('\x1b[36m%s\x1b[0m', 'No linting issues, Your code looks fabulous! ', '\x1b[0m');
+    // process.exit(0);
+  }
+});
+
+console.log('\x1b[1m', 'Tests to run... May Allah be with you', '\x1b[0m');
+console.log(
+  'You can',
+  '\x1b[1m',
+  'skip',
+  '\x1b[0m',
+  'the pre-commit hook by running "git push --no-verify" instead',
+  '\x1b[1m',
+  'but be aware! someone is always watching!',
+  '\x1b[0m'
+);
+
+require('child_process').exec('npm run test:ci', function (err, stdout) {
+  console.log('Property manager Test: ' + stdout);
+  if (err) {
+    console.log('Failed with Error in Unit tests');
+    process.exit(-1);
+  } else {
+    console.log('\x1b[36m%s\x1b[0m', 'Your code passed all test! ', '\x1b[0m');
+    process.exit(0);
+  }
+});

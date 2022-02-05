@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+// tslint:disable
+require('child_process').exec('git rev-parse --abbrev-ref HEAD', function (err, stdout) {
+  if (err) {
+    process.abort();
+  } else {
+    if (
+      stdout.match(
+        /^(feature|bugfix|release|hotfix|develop|master|integration)\/([0-9]{4,}_.*|ManagerApp\d{2}\.\d{2}\.\d{4}|ManagerApp\d{2}\.\d{4})$/gm
+      ) == null
+    ) {
+      console.log(
+        '\x1b[31m',
+        'Who hurt you! fix you name branch name to follow ${git-flow-prefix}/{card-id}_{short}-{description}',
+        '\x1b[0m'
+      );
+      console.log('Git flow prefixes are : feature | hotfix | bugfix | release');
+      console.log('Short description example: user_auth');
+      console.log('Final Sexy Look:');
+      console.log('\x1b[36m%s\x1b[0m', 'feature/1234_user_auth', '\x1b[0m');
+      console.log('For releases is should look like this:');
+      console.log('\x1b[36m%s\x1b[0m', 'release/ManagerApp24.12.2020', '\x1b[0m');
+      console.log('For integration is should look like this:');
+      console.log('\x1b[36m%s\x1b[0m', 'integration/ManagerApp03.2021', '\x1b[0m');
+      process.exit(-1);
+    } else {
+      console.log(
+        '\x1b[36m%s\x1b[0m',
+        'You rock because you follow the branch policy naming convention!',
+        '\x1b[0m'
+      );
+    }
+  }
+});

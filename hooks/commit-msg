@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+// tslint:disable
+const fs = require('fs');
+const message = fs.readFileSync(process.argv[2], 'utf8').trim();
+if (message.match(/^\[(FEAT|TEST|MAINTENANCE|CI\/CD|REFACTOR|STYLE|PERF|DOCS|FIX)\]+ .*/gm)) {
+  console.log(
+    '\x1b[36m%s\x1b[0m',
+    'Your commit message is accepted! you will have a happy life =)',
+    '\x1b[0m'
+  );
+} else if (message.match(/^(Merge branch).*/gm)) {
+  console.log(
+    '\x1b[36m%s\x1b[0m',
+    'Default Merge message is accepted! Happy merging =)',
+    '\x1b[0m'
+  );
+} else {
+  console.log('\x1b[1m', 'You might be perfect, but your commit message is not!', '\x1b[0m');
+  console.log(
+    '\x1b[31m',
+    "Please use a message that starts with [FEAT|TEST|MAINTENANCE|CI/CD|REFACTOR|STYLE|PERF|DOCS|FIX] and don't forget a space after",
+    '\x1b[0m'
+  );
+  process.exit(5);
+}
