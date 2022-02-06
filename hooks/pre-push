@@ -37,7 +37,7 @@ console.log(
 );
 
 require('child_process').exec('npm run test:ci', function (err, stdout) {
-  console.log('Property manager Test: ' + stdout);
+  console.log('Musala Test: ' + stdout);
   if (err) {
     console.log('Failed with Error in Unit tests');
     process.exit(-1);
