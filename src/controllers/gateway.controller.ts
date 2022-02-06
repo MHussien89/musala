@@ -9,8 +9,8 @@ class GatewayController {
   /**
    * Create a new gateway
    * @module gatewayModule
-   * @function
-   * @param {Object} req - Express request object with authenticated user
+   * @function addGateway
+   * @param {Object} req - Express request object
    * @param {Object} res - Express response object
    * @param {Function} next - Express next middleware function
    * @return {undefined}
@@ -30,6 +30,15 @@ class GatewayController {
     }
   }
 
+  /**
+   * Update Existing Gateway
+   * @module gatewayModule
+   * @function updateGateway
+   * @param {Object} req - Express request object
+   * @param {Object} res - Express response object
+   * @param {Function} next - Express next middleware function
+   * @return {undefined}
+   */
   public updateGateway = async (req: Request, res: Response, next: NextFunction) => {
     const updateGatewayDto: UpdateGatewayDto = req.body;
     const gatewayId: string = req.params.id;
@@ -46,6 +55,15 @@ class GatewayController {
     }
   }
 
+  /**
+   * Retrieve All Gateways
+   * @module gatewayModule
+   * @function getAllGateways
+   * @param {Object} req - Express request object
+   * @param {Object} res - Express response object
+   * @param {Function} next - Express next middleware function
+   * @return {undefined}
+   */
   public getAllGateways = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
@@ -57,6 +75,15 @@ class GatewayController {
     }
   }
 
+  /**
+   * Retrieve Gateway By ID
+   * @module gatewayModule
+   * @function getGatewayById
+   * @param {Object} req - Express request object
+   * @param {Object} res - Express response object
+   * @param {Function} next - Express next middleware function
+   * @return {undefined}
+   */
   public getGatewayById = async (req: Request, res: Response, next: NextFunction) => {
     const gatewayId: string = req.params.id;
 
@@ -69,6 +96,15 @@ class GatewayController {
     }
   }
 
+  /**
+   * Delete Gateway By ID
+   * @module gatewayModule
+   * @function deleteGateway
+   * @param {Object} req - Express request object
+   * @param {Object} res - Express response object
+   * @param {Function} next - Express next middleware function
+   * @return {undefined}
+   */
   public deleteGateway = async (req: Request, res: Response, next: NextFunction) => {
     const gatewayId: string = req.params.id;
 
@@ -81,6 +117,15 @@ class GatewayController {
     }
   }
 
+  /**
+   * Add Device To Gateway
+   * @module gatewayModule
+   * @function addDevice
+   * @param {Object} req - Express request object
+   * @param {Object} res - Express response object
+   * @param {Function} next - Express next middleware function
+   * @return {undefined}
+   */
   public addDevice = async (req: Request, res: Response, next: NextFunction) => {
     const createDeviceDto: CreateDeviceDto = req.body;
     const gatewayId: string = req.params.id;
@@ -97,6 +142,15 @@ class GatewayController {
     }
   }
 
+  /**
+   * Update Existing Device
+   * @module gatewayModule
+   * @function updateDevice
+   * @param {Object} req - Express request object
+   * @param {Object} res - Express response object
+   * @param {Function} next - Express next middleware function
+   * @return {undefined}
+   */
   public updateDevice = async (req: Request, res: Response, next: NextFunction) => {
     const updateDeviceDto: UpdateDeviceDto = req.body;
     const deviceId: string = req.params.deviceId;
@@ -113,6 +167,15 @@ class GatewayController {
     }
   }
 
+  /**
+   * Delete Device
+   * @module gatewayModule
+   * @function deleteDevice
+   * @param {Object} req - Express request object
+   * @param {Object} res - Express response object
+   * @param {Function} next - Express next middleware function
+   * @return {undefined}
+   */
   public deleteDevice = async (req: Request, res: Response, next: NextFunction) => {
     const gatewayId: string = req.params.gatewayId;
     const deviceId: string = req.params.deviceId;
